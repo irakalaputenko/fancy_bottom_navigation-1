@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const double ICON_OFF = -3;
+const double ICON_OFF = -5;
 const double ICON_ON = 0;
 const double TEXT_OFF = 3;
 const double TEXT_ON = 1;
@@ -39,9 +39,8 @@ class TabItem extends StatelessWidget {
           Container(
             height: double.infinity,
             width: double.infinity,
-            child: AnimatedAlign(
-                duration: Duration(milliseconds: ANIM_DURATION),
-                alignment: Alignment(0, (selected) ? TEXT_ON : TEXT_OFF),
+            child: Align(
+                alignment: Alignment(0, TEXT_ON),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
@@ -67,7 +66,7 @@ class TabItem extends StatelessWidget {
                   highlightColor: Colors.transparent,
                   splashColor: Colors.transparent,
                   padding: EdgeInsets.all(0),
-                  alignment: Alignment(0, 0),
+                  alignment: Alignment(0, -1),
                   icon: Icon(
                     iconData,
                     color: iconColor,
